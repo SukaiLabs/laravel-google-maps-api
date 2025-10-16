@@ -92,6 +92,7 @@ GOOGLE_MAPS_DEFAULT_LANGUAGE=en
 ### Step 4: Run Migrations
 
 Run the migrations to create the `address_histories` table and optionally remove the `address` column from the `users` table:
+So make Sure u remove it from the user model if it exists 
 
 ```bash
 php artisan migrate
