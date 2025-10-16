@@ -1,15 +1,15 @@
 <?php
 
-namespace Cyna\GoogleMaps\Http\Controllers;
+namespace SukaiLabs\GoogleMaps\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-use Cyna\GoogleMaps\Http\Requests\StoreAddressHistoryRequest;
-use Cyna\GoogleMaps\Http\Resources\AddressHistoryResource;
-use Cyna\GoogleMaps\Models\AddressHistory;
+use SukaiLabs\GoogleMaps\Http\Requests\StoreAddressHistoryRequest;
+use SukaiLabs\GoogleMaps\Http\Resources\AddressHistoryResource;
+use SukaiLabs\GoogleMaps\Models\AddressHistory;
 
 class AddressHistoryController extends Controller
 {

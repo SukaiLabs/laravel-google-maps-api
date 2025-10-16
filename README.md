@@ -39,29 +39,15 @@ A comprehensive Laravel package providing Google Maps geocoding features with ad
 
 ## Installation
 
-### Step 1: Add Package to Your Project
+### Step 1: Install via Composer
 
-Add the package to your `composer.json`:
-
-```json
-{
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./packages/googlemaps"
-        }
-    ],
-    "require": {
-        "cyna/googlemaps": "*"
-    }
-}
-```
-
-Then run:
+Install the package via Composer:
 
 ```bash
-composer require cyna/googlemaps
+composer require sukailabs/googlemaps
 ```
+
+**Note:** The package is available as a public repository on GitHub: [SukaiLabs/laravel-google-maps-api](https://github.com/SukaiLabs/laravel-google-maps-api)
 
 ### Step 2: Publish Configuration
 
@@ -347,8 +333,8 @@ The package includes sensible rate limiting defaults:
 You can use the actions directly in your code:
 
 ```php
-use Cyna\GoogleMaps\Actions\GeocodeAction;
-use Cyna\GoogleMaps\Http\Requests\GeocodeRequest;
+use SukaiLabs\GoogleMaps\Actions\GeocodeAction;
+use SukaiLabs\GoogleMaps\Http\Requests\GeocodeRequest;
 
 // In a controller or service
 public function geocodeAddress(GeocodeRequest $request, GeocodeAction $action)
@@ -361,7 +347,7 @@ public function geocodeAddress(GeocodeRequest $request, GeocodeAction $action)
 ### Working with Address History
 
 ```php
-use Cyna\GoogleMaps\Models\AddressHistory;
+use SukaiLabs\GoogleMaps\Models\AddressHistory;
 
 // Get user's addresses
 $addresses = AddressHistory::forUser(auth()->id())
@@ -530,13 +516,23 @@ If the migration fails when removing the address column:
 2. You can safely run the migration even if the column doesn't exist
 3. To rollback: `php artisan migrate:rollback`
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+Visit the repository: [SukaiLabs/laravel-google-maps-api](https://github.com/SukaiLabs/laravel-google-maps-api)
+
 ## Support
 
-For issues, questions, or contributions, please contact the Cyna development team.
+- **Issues:** [GitHub Issues](https://github.com/SukaiLabs/laravel-google-maps-api/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/SukaiLabs/laravel-google-maps-api/discussions)
+- **Documentation:** [README](https://github.com/SukaiLabs/laravel-google-maps-api#readme)
 
 ## License
 
-This package is proprietary software developed for Cyna.
+This package is open-source software licensed under the [MIT license](LICENSE.md).
+
+Copyright (c) 2025 Sukai Labs
 
 ---
 

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Cyna\GoogleMaps\Http\Controllers\GeocodingController;
+use SukaiLabs\GoogleMaps\Http\Controllers\GeocodingController;
 
 Route::prefix('geo')
     ->group(function () {

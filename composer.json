@@ -1,12 +1,27 @@
 {
-    "name": "cyna/googlemaps",
+    "name": "sukailabs/googlemaps",
     "description": "A comprehensive Laravel package for Google Maps geocoding features with address history management",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "laravel",
+        "google-maps",
+        "geocoding",
+        "places-api",
+        "address-history",
+        "reverse-geocoding",
+        "autocomplete"
+    ],
+    "homepage": "https://github.com/SukaiLabs/laravel-google-maps-api",
+    "support": {
+        "issues": "https://github.com/SukaiLabs/laravel-google-maps-api/issues",
+        "source": "https://github.com/SukaiLabs/laravel-google-maps-api",
+        "docs": "https://github.com/SukaiLabs/laravel-google-maps-api#readme"
+    },
     "authors": [
         {
-            "name": "Cyna Team",
-            "email": "dev@cyna.com"
+            "name": "Sukai Labs",
+            "email": "dev@sukailabs.com"
         }
     ],
     "require": {
@@ -15,15 +30,19 @@
         "illuminate/database": "^11.0",
         "illuminate/http": "^11.0"
     },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^3.0",
+        "orchestra/testbench": "^9.0"
+    },
     "autoload": {
         "psr-4": {
-            "Cyna\\GoogleMaps\\": "src/"
+            "SukaiLabs\\GoogleMaps\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Cyna\\GoogleMaps\\GoogleMapsServiceProvider"
+                "SukaiLabs\\GoogleMaps\\GoogleMapsServiceProvider"
             ]
         }
     },

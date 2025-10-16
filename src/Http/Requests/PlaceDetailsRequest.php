@@ -1,6 +1,6 @@
 <?php
 
-namespace Cyna\GoogleMaps\Http\Requests;
+namespace SukaiLabs\GoogleMaps\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

@@ -1,6 +1,6 @@
 <?php
 
-use Cyna\GoogleMaps\Http\Controllers\AddressHistoryController;
+use SukaiLabs\GoogleMaps\Http\Controllers\AddressHistoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(AddressHistoryController::class)->prefix('/address-histories')->group(function () {

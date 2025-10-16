@@ -1,15 +1,16 @@
 <?php
 
-namespace Cyna\GoogleMaps\Actions;
+namespace SukaiLabs\GoogleMaps\Actions;
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
-use Cyna\GoogleMaps\Http\Requests\ReverseGeocodeRequest;
+use SukaiLabs\GoogleMaps\Http\Requests\ReverseGeocodeRequest;
 
 class ReverseGeocodeAction
 {
     public function execute(ReverseGeocodeRequest $request): array
     {
-        $apiKey = config('googlemaps.api_key');
+        $apiKey = Config::get('googlemaps.api_key');
 
         if (!$apiKey) {
             if (app()->environment('testing')) {
@@ -19,7 +20,7 @@ class ReverseGeocodeAction
             }
         }
 
-        $language = $request->input('language', config('googlemaps.default_language', app()->getLocale()));
+        $language = $request->input('language', Config::get('googlemaps.default_language', app()->getLocale()));
 
         $resp = Http::get('https://maps.googleapis.com/maps/api/geocode/json', [
             'latlng' => $request->input('lat') . ',' . $request->input('lng'),

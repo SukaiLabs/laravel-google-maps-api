@@ -1,17 +1,17 @@
 <?php
 
-namespace Cyna\GoogleMaps\Http\Controllers;
+namespace SukaiLabs\GoogleMaps\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
-use Cyna\GoogleMaps\Http\Requests\AutocompleteRequest;
-use Cyna\GoogleMaps\Http\Requests\ReverseGeocodeRequest;
-use Cyna\GoogleMaps\Http\Requests\GeocodeRequest;
-use Cyna\GoogleMaps\Http\Requests\PlaceDetailsRequest;
-use Cyna\GoogleMaps\Actions\AutocompleteAction;
-use Cyna\GoogleMaps\Actions\ReverseGeocodeAction;
-use Cyna\GoogleMaps\Actions\GeocodeAction;
-use Cyna\GoogleMaps\Actions\PlaceDetailsAction;
+use SukaiLabs\GoogleMaps\Http\Requests\AutocompleteRequest;
+use SukaiLabs\GoogleMaps\Http\Requests\ReverseGeocodeRequest;
+use SukaiLabs\GoogleMaps\Http\Requests\GeocodeRequest;
+use SukaiLabs\GoogleMaps\Http\Requests\PlaceDetailsRequest;
+use SukaiLabs\GoogleMaps\Actions\AutocompleteAction;
+use SukaiLabs\GoogleMaps\Actions\ReverseGeocodeAction;
+use SukaiLabs\GoogleMaps\Actions\GeocodeAction;
+use SukaiLabs\GoogleMaps\Actions\PlaceDetailsAction;
 
 class GeocodingController extends Controller
 {

@@ -1,15 +1,16 @@
 <?php
 
-namespace Cyna\GoogleMaps\Actions;
+namespace SukaiLabs\GoogleMaps\Actions;
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
-use Cyna\GoogleMaps\Http\Requests\PlaceDetailsRequest;
+use SukaiLabs\GoogleMaps\Http\Requests\PlaceDetailsRequest;
 
 class PlaceDetailsAction
 {
     public function execute(PlaceDetailsRequest $request): array
     {
-        $apiKey = config('googlemaps.api_key');
+        $apiKey = Config::get('googlemaps.api_key');
 
         if (!$apiKey) {
             if (app()->environment('testing')) {
@@ -19,7 +20,7 @@ class PlaceDetailsAction
             }
         }
 
-        $language = $request->input('language', config('googlemaps.default_language', app()->getLocale()));
+        $language = $request->input('language', Config::get('googlemaps.default_language', app()->getLocale()));
 
         $resp = Http::get('https://maps.googleapis.com/maps/api/place/details/json', [
             'place_id' => $request->input('place_id'),

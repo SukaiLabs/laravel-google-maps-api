@@ -1,8 +1,8 @@
 <?php
 
-namespace Cyna\GoogleMaps\Policies;
+namespace SukaiLabs\GoogleMaps\Policies;
 
-use Cyna\GoogleMaps\Models\AddressHistory;
+use SukaiLabs\GoogleMaps\Models\AddressHistory;
 use Illuminate\Auth\Access\Response;
 
 class AddressHistoryPolicy

@@ -1,12 +1,13 @@
 <?php
 
-namespace Cyna\GoogleMaps;
+namespace SukaiLabs\GoogleMaps;
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Cyna\GoogleMaps\Models\AddressHistory;
-use Cyna\GoogleMaps\Policies\AddressHistoryPolicy;
+use SukaiLabs\GoogleMaps\Models\AddressHistory;
+use SukaiLabs\GoogleMaps\Policies\AddressHistoryPolicy;
 
 class GoogleMapsServiceProvider extends ServiceProvider
 {
@@ -46,7 +47,7 @@ class GoogleMapsServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__.'/../lang', 'googlemaps');
 
         // Register routes if enabled
-        if (config('googlemaps.routes.enabled', true)) {
+        if (Config::get('googlemaps.routes.enabled', true)) {
             $this->registerRoutes();
         }
 
@@ -66,18 +67,18 @@ class GoogleMapsServiceProvider extends ServiceProvider
      */
     protected function registerRoutes(): void
     {
-        $prefix = config('googlemaps.routes.prefix', 'api/v1');
+        $prefix = Config::get('googlemaps.routes.prefix', 'api/v1');
 
         // Register Geo routes (without auth middleware)
         Route::prefix($prefix)
-            ->middleware(config('googlemaps.routes.geo_middleware', ['api']))
+            ->middleware(Config::get('googlemaps.routes.geo_middleware', ['api']))
             ->group(function () {
                 $this->loadRoutesFrom(__DIR__.'/../routes/geo.php');
             });
 
         // Register Address History routes (with auth middleware)
         Route::prefix($prefix)
-            ->middleware(config('googlemaps.routes.address_history_middleware', [
+            ->middleware(Config::get('googlemaps.routes.address_history_middleware', [
                 'api',
                 'auth:sanctum',
                 'verified',

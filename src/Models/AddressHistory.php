@@ -1,10 +1,11 @@
 <?php
 
-namespace Cyna\GoogleMaps\Models;
+namespace SukaiLabs\GoogleMaps\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Config;
 
 class AddressHistory extends Model
 {
@@ -27,7 +28,7 @@ class AddressHistory extends Model
      */
     public function user(): BelongsTo
     {
-        return $this->belongsTo(config('auth.providers.users.model', 'App\\Models\\User'));
+        return $this->belongsTo(Config::get('auth.providers.users.model', 'App\\Models\\User'));
     }
 
     /**
@@ -66,8 +67,8 @@ class AddressHistory extends Model
 
         // Auto-delete old addresses when limit is reached
         static::creating(function ($addressHistory) {
-            $maxPerUser = config('googlemaps.address_history.max_per_user', 20);
-            $autoDeleteOld = config('googlemaps.address_history.auto_delete_old', true);
+            $maxPerUser = Config::get('googlemaps.address_history.max_per_user', 20);
+            $autoDeleteOld = Config::get('googlemaps.address_history.auto_delete_old', true);
 
             if ($maxPerUser > 0 && $autoDeleteOld) {
                 $count = static::where('user_id', $addressHistory->user_id)->count();

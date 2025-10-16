@@ -1,6 +1,6 @@
 <?php
 
-namespace Cyna\GoogleMaps\Http\Resources;
+namespace SukaiLabs\GoogleMaps\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;

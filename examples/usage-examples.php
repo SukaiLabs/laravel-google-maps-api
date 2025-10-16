@@ -12,10 +12,10 @@
 
 namespace App\Examples;
 
-use Cyna\GoogleMaps\Models\AddressHistory;
-use Cyna\GoogleMaps\Actions\GeocodeAction;
-use Cyna\GoogleMaps\Actions\AutocompleteAction;
-use Cyna\GoogleMaps\Http\Requests\GeocodeRequest;
+use SukaiLabs\GoogleMaps\Models\AddressHistory;
+use SukaiLabs\GoogleMaps\Actions\GeocodeAction;
+use SukaiLabs\GoogleMaps\Actions\AutocompleteAction;
+use SukaiLabs\GoogleMaps\Http\Requests\GeocodeRequest;
 use Illuminate\Support\Facades\Auth;
 
 class GoogleMapsExamples
@@ -176,7 +176,7 @@ class GoogleMapsExamples
 namespace App\Http\Controllers\Examples;
 
 use App\Http\Controllers\Controller;
-use Cyna\GoogleMaps\Models\AddressHistory;
+use SukaiLabs\GoogleMaps\Models\AddressHistory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
